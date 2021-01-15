@@ -1,45 +1,78 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# MS2-Holiday-Destinations
+This site is intended for people of all walks of life who seek a break from life's everyday's woes. A dream destination, complete with chosen perks, or not...
 
-Welcome USER_NAME,
+The site aims to provide an idea of what's in store for your desired outcome, whether it be country or activity, and what it will take to achieve it.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+## UX
+---
+This site will focus on families of all sizes, whether they are alone or as a couple shouldn't matter. We want to help families find their desired holiday destination.
 
-## Gitpod Reminders
+Therefore, as a person seeking a break-
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Or as a person who is just browsing for ideas-
 
-`python3 -m http.server`
+* *I want to be able to locate a desired country/city*
+* *I want to discover what activities lay in store in that country. Resturants?*
+* *Where would I live, for the duration of the holiday? Hotels?*
+* *How much would everything, or certain things cost? Price range?*
+* *How will I book a desired choice?*
 
-A blue button should appear to click: *Make Public*,
+Wireframes are provided/linked below: (included are wireframes for 3 major devices; **Desktop**, **Mobile**, and **Tablet**)
 
-Another blue button should appear to click: *Open Browser*.
+https://github.com/Windmost8/MS2-Holiday-Destinations/blob/faffa1001f42b06464c45edefc62afddeb72b815/wireframes
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+(Alternatively, they may be found inside the "wireframes" folder directory)
 
-A blue button should appear to click: *Make Public*,
+---
 
-Another blue button should appear to click: *Open Browser*.
+## Features
+---
+* Feature 1 - **Interactive Map:** A map of relevant locations is fully interactlble and explorable. Able to zoom in and out and discover surroundings.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* Feature 2 - **Searchablilty:** Indexing relevant queries in order to provide desired outcome. This includes, among other things; Resturants, Hotels, Prices, Countries, and Cities
 
-## Updates Since The Instructional Video
+* Feature 3 - **Contact Form:** If wished, users may submit a contanct form with their inquires to the site owners, or be directed to relevant destination links.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+* Feature 3 - **Socials:** Should users find themselve wanting to know more about holiday destinations, they may do so through the social media links as well.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+* Feature 4 - **Header Bar**
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+instead of like this, u need to explain what the site does basically
+and all interactive elements, and what they look like. .basically
+explain the site visually and interactively.
+---
+# Technologies Used
+* HTML
+* CSS 
+* Bootstrap 4 (Library)
+* JavaScript
+* Jquery
+* Google Api
+* Chrome Dev Tools
+* Lighthouse Audits
+* Github
+* Gitpod
+---
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Testing
+---
+* Test Cases
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+* Screenshots
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+---
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Deployment
+---
+* Gitpod
 
---------
+* Github
 
-Happy coding!
+* Local Machine
+
+---
+
+## Credits 
+---
+---

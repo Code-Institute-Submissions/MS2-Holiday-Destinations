@@ -19,7 +19,7 @@ Or as a person who is just browsing for ideas-
 
 Wireframes are provided/linked below: (included are wireframes for 3 major devices; **Desktop**, **Mobile**, and **Tablet**)
 
-https://github.com/Windmost8/MS2-Holiday-Destinations/blob/99d9ce50adb31f9b36aa07ec7bf792052777c03d/wireframes/allwireframesms2.pdf
+https://github.com/Windmost8/MS2-Holiday-Destinations/blob/05945a29021a7b2c8190721a5f4784d3f0a448b7/wireframes/allwireframesms2.pdf
 
 (Alternatively, they may be found inside the "wireframes" folder directory)
 

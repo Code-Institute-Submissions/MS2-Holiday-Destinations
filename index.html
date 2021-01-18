@@ -17,21 +17,24 @@
 <body>
     <!--bootstrap, altering margins with added classes-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand logo" href="index.html">Dream Destination</a>
-        
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="index.html">Dream Destination</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Us</a>
-                </li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
             </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                </ul>
+            </form>
         </div>
     </nav>
 
@@ -41,18 +44,39 @@
 
     <br>
 
-    <p>At <i><b><a href="about.html" class="dreamDestination">Dream Destination</a></b></i> we pride ourselves in simply providing you with an easier way of coming closer to achieving your 
-        best holiday. Actually achieving it however... well, thats up to you!<br><br>Whether this includes a specific <i><b>location</b></i>, 
-        <i><b>activity</b></i>, <i><b>reviews</b></i> or <i><b>price range</b></i>, we got you covered!<br>Our goal is your goal, and displayed below is an 
-        interactive map that you may explore to your hearts desire.
+    <p>Welcome to <i><b><a href="about.html" class="dreamDestination">Dream Destination</a></b></i>, we want <i>you,</i> to help <i>us,</i> help you
+        discover and declare your dream destination! Displayed below is an interactive map that you may explore to your hearts desire. Or you may
+        instead use the select options to find places easier.
     </p>
-
-    <br>
 
     <h3>Go ahead and start!</h3>
 
     <br>
 
+    <!--bootstrap form, modified-->
+    <form id="selectPlace" action="/action_page.php">
+        <div id="centerForm">
+            <div class="form-group col-md-4">
+                <label for="country">Choose a Country:</label>
+                <select id="inputCountry" class="form-control">
+                    <option selected disabled>Select a Country</option>
+                    <option>...</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="city">Choose a City:</label>
+                <select id="inputCity" class="form-control">
+                    <option selected disabled>Select a City</option>
+                    <option>...</option>
+                </select>
+            </div>
+        </div>
+        <br>
+    <button type="submit" class="btn btn-dark">Let's find your dream destination!</button>
+    </form>
+
+    <br>
+<!--
     <form id="selectPlace" action="/action_page.php">
         <label for="country">Choose a Country:</label>
         <select name="country" id="country">
@@ -62,6 +86,9 @@
             <option value="??">??</option>
             <option value="??">??</option>
         </select>
+
+        <br>
+
         <label for="city">Choose a City:</label>
         <select name="city" id="city">
             <option value="City" disabled selected>City</option>
@@ -73,51 +100,83 @@
         <br><br>
         <input type="submit" value="Let's find your dream destination!">
     </form>
-    
+-->
     <div id="flex">
         <div id="map"></div>
-        <div id="card">
-            <label>Location:</label><br>
-            <label>Activities:</label><br>
-            <label>Price Range:</label><br>
-            <label>Reviews:</label><br>
-        <!-- 
-            <img src="https://media-cdn.tripadvisor.com/media/photo-s/11/81/71/98/holiday-island-resort.jpg"><br><br>
-        -->
-            <a href="#contactForm" id="button" class="btn btn-default">Reserve</a>
+        <!--bootstrap card-->
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://media-cdn.tripadvisor.com/media/photo-s/11/81/71/98/holiday-island-resort.jpg" alt="image of selected place">
+            <div class="card-body">
+                <h5 class="card-title">Information:</h5><br>
+                <h6 class="card-title">Location:</h6><br>
+                <h6 class="card-title">Price Range:</h6><br>
+                <h6 class="card-title">Activities:</h6><br>
+                <h6 class="card-title">Reviews:</h6><br>
+                <!--
+                <label>Location:</label><br>
+                <label>Activities:</label><br>
+                <label>Price Range:</label><br>
+                <label>Reviews:</label><br>
+                -->
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#contactForm" class="btn btn-dark centerBtn">Reserve</a>
+            </div>
         </div>
     </div>
 
     <br>
 
-    <p>Fill out the form below to proceed with booking.<br>We will never share your email with anyone.</p>
+    <p>Fill in this form to proceed.</p>
 
-    <div>
-        <form id="contactForm" onsubmit="return sendEmail(this)">
-            <input type="text" id="fname" name="fname" placeholder="First Name" required><br><br>
-            <input type="text" id="lname" name="lname" placeholder="Last Name" required ><br><br>
-            <input type="email" id="emailaddress" name="emailaddress" placeholder="Email Address" required><br><br>
-            <label for="quantity">Number of People:</label>
-            <input type="number" id="quantity" name="quantity" min="1" max="5" required><br><br>
-            <label for="birthday">From: (date)</label>
-            <input type="date" id="fromDate" name="birthday" required>
-            <label for="birthday">To: (date)</label>
-            <input type="date" id="toDate" name="birthday" required><br><br>
-            <textarea rows="3" cols="40" placeholder="Your Inquiry"></textarea><br><br>
-            <input type="submit" value="Book">
-        </form> 
-    </div>
+    <!--bootstrap form, modified-->
+    <form id="contactForm" onsubmit="return sendEmail(this)">
+        <div class="form-row centerLastForm">
+            <div class="col-md-3 mb-3">
+            <input type="text" class="form-control" id="validationDefault01" placeholder="First name" required>
+            </div>
+        </div>
+        <div class="form-row centerLastForm">
+            <div class="col-md-3 mb-3">
+            <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" required>
+            </div>
+        </div>
+        <div class="form-row centerLastForm">
+            <div class="col-md-3 mb-3">
+            <input type="email" class="form-control" id="validationDefault03" placeholder="Email Address" required>
+            </div>
+        </div>
+        <div class="form-row centerLastForm"> 
+            <div class="col-md-3 mb-3">
+                <input type="number" class="form-control" id="validationDefaultUsername" placeholder="Number of People" min="1" max="5" required>
+            </div>
+        </div> 
+        <div class="form-row centerLastForm">
+            <div class="col-md-3 mb-3">
+                <label for="validationDefault04"><b>From: (Date)</b></label>
+                <input type="date" class="form-control" id="validationDefault04" required>
+            </div>
+        </div>
+        <div class="form-row centerLastForm">
+            <div class="col-md-3 mb-3">
+                <label for="validationDefault05"><b>To: (Date)</b></label>
+                <input type="date" class="form-control" id="validationDefault05" required>
+            </div>
+        </div>
+        <div class="form-row centerLastForm">
+            <button class="btn btn-dark" type="submit">Book</button>
+        </div>
+    </form>
 
     <br>
 
-    <footer>
-      <ul class="social-networks">
-        <li>Want to Socialize?</li>
-        <li><a href="https://www.facebook.com" target="_blank"> <i class="fab fa-facebook-square"></i></a></li>
-        <li><a href="https://www.twitter.com" target="_blank"> <i class="fab fa-twitter-square"></i></a></li>
-        <li><a href="https://www.youtube.com" target="_blank"> <i class="fab fa-youtube"></i></a></li>
-        <li><a href="https://www.instagram.com" target="_blank"> <i class="fab fa-instagram"></i></a></li>
-      </ul>
+    <footer>  
+        <ul class="social-networks">
+            <li>Want to Socialize?</li>
+            <li><a href="https://www.facebook.com" target="_blank"> <i class="fab fa-facebook-square"></i></a></li>
+            <li><a href="https://www.twitter.com" target="_blank"> <i class="fab fa-twitter-square"></i></a></li>
+            <li><a href="https://www.youtube.com" target="_blank"> <i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://www.instagram.com" target="_blank"> <i class="fab fa-instagram"></i></a></li>
+        </ul>
     </footer>
 
     <script src="myscripts.js"></script>

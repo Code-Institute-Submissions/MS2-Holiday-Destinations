@@ -62,6 +62,16 @@ This map will show the location and relevant markers, allowing you to further se
 
 * Screenshots
 
+* **Issues**  
+    * At times, whilst previewing the site through port 8000 on gitpod and refreshing the page to update changed code, 
+the refresh might not always go through, and therefore one must 
+ctrl-click the refresh button for a forced refresh. 
+    * Since the google maps API we are using is for development purposes only, it may appear slightly greyed, 
+    and also show a popup message on the map itself mentioning that the map did not load correctly. The map works regardless
+    of this however, so we just click ok and continue like normal. Also, at times, when refreshing the page, the map may not display
+    itself at all, and be completey greyed out, mentioning that something went wrong. Continuing to refresh
+    solves this. 
+
 ---
 
 ## Deployment
@@ -70,6 +80,7 @@ This map will show the location and relevant markers, allowing you to further se
 a popup with port 8000 will ask you to either "Make Public" or "Open Browser". You can click on "Make Public" first and if another popup arrives you 
 click on "Open Browser" in order to see the site. Alternatively, you can ctrl-click on the port 8000 link that will be shown in the terminal. There is no autosave 
 so saving after each change is optimal, as well as commiting to github. The template used here was the full template issued by Code Insitutite.
+
 
 * **Github** - Deployment was done through github pages. The documentation of which can be found here: https://pages.github.com/ 
 Through the settings of the repository, in the options menu, scrolling down to GitHub pages and saving and publishing through there. 

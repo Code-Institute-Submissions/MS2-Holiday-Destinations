@@ -86,7 +86,7 @@ h1 {
 
 .social-networks li {
   display: inline;
-  margin-right:100px;
+  margin-right:50px;
 }
 
 .social-networks {
@@ -116,3 +116,22 @@ i {
         width: unset !important;
     }
 }
+
+@media screen and (max-width: 768px) {
+    div#map {
+        min-height:500px;
+        margin: unset !important;
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    div#map {
+        min-height:500px;
+        margin: unset !important;
+        width: 500px;
+    }
+}
+
+/*look at surface duo, look at about us page on ipad pro, look at having consistent footer, try sticky on home page as well, but then make space
+between button*/

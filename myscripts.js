@@ -25,3 +25,18 @@ function initMap() {
             imagePath: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
             });
         }
+
+        //for emailjs
+function sendEmail(contact) {
+    emailjs.send('gmail', 'rosie', {
+        "from_name": contact.name.value, 
+        "from_email": contact.email.value,
+        "project_request": contact.inquiry.value
+    })
+    .then(function(response) {
+    console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+    console.log('FAILED...', error);
+    });
+    return false //this prevents the page from refreshing when u press submit
+}

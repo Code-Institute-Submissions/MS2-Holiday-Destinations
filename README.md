@@ -19,7 +19,7 @@ Or as a person who is just browsing for ideas-
 
 Wireframes are provided/linked below: (included are wireframes for 3 major devices; **Desktop**, **Mobile**, and **Tablet**)
 
-https://github.com/Windmost8/MS2-Holiday-Destinations/blob/faffa1001f42b06464c45edefc62afddeb72b815/wireframes
+https://github.com/Windmost8/MS2-Holiday-Destinations/blob/99d9ce50adb31f9b36aa07ec7bf792052777c03d/wireframes/allwireframesms2.pdf
 
 (Alternatively, they may be found inside the "wireframes" folder directory)
 
@@ -37,10 +37,11 @@ https://github.com/Windmost8/MS2-Holiday-Destinations/blob/faffa1001f42b06464c45
 
 * Feature 4 - **Header Bar**
 
-
-instead of like this, u need to explain what the site does basically
-and all interactive elements, and what they look like. .basically
-explain the site visually and interactively.
+* **Feature 1** - The header menus will show you "Home" and "Booking". For the home page you are introduced to the idea of exploring a dream destination form the get go, explained in a small paragraph, proceeded by two dropdown menus specifiying country/city.
+* **Feature 2** - After selecting country/city, you my press a button situated beneath them to show you your selected choices on an interactive map below the button. Alternatively you may explore the map first. 
+This map will show the location and relevant markers, allowing you to further select a desired destination.
+* **Feature 3** - After clickin on a marker, you should be directed to the "Booking" page where you are introduced to a form that should be explained by a paragraph situated above it. Filling this form and submitting it would send a confirmation mail to the user.
+* **Feature 4** - The footer section of both pages showcase relevant socials and addtional contact information, also interactable.
 ---
 # Technologies Used
 * HTML
@@ -65,9 +66,16 @@ explain the site visually and interactively.
 
 ## Deployment
 ---
-* Gitpod
+* **Gitpod** - Previewing the site in gitpod is done through the command "python3 -m http.server" (without quotes). Once the command is used, 
+a popup with port 8000 will ask you to either "Make Public" or "Open Browser". You can click on "Make Public" first and if another popup arrives you 
+click on "Open Browser" in order to see the site. Alternatively, you can ctrl-click on the port 8000 link that will be shown in the terminal. There is no autosave 
+so saving after each change is optimal, as well as commiting to github. The template used here was the full template issued by Code Insitutite.
 
-* Github
+* **Github** - Deployment was done through github pages. The documentation of which can be found here: https://pages.github.com/ 
+Through the settings of the repository, in the options menu, scrolling down to GitHub pages and saving and publishing through there. 
+It took some time to deploy, but eventually after some minutes the site was up.
+
+The deployed site is functional and succesfull. The link is here; https://windmost8.github.io/MS2-Holiday-Destinations/index.html
 
 * Local Machine
 

@@ -110,17 +110,16 @@
                 <h6 class="card-title" id="activites">Activities:</h6><br>
                 <h6 class="card-title" id="reviews">Reviews:</h6><br>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#contactForm" class="btn btn-dark centerBtn">Reserve</a>
+                <a href="#contactForm" class="btn btn-dark centerBtn" id="show">Reserve</a>
             </div>
         </div>
     </div>
 
     <br>
 
-    <p>Fill in this form to proceed.</p>
-
     <!--bootstrap form, modified-->
     <form id="contactForm" onsubmit="return sendEmail(this)">
+        <p>Fill in this form to proceed.</p>
         <div class="form-row centerLastForm">
             <div class="col-md-3 mb-3 bookingInputContainer">
             <input type="text" class="form-control" id="validationDefault01" placeholder="First name" name="fname" required>

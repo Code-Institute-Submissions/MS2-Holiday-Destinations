@@ -59,11 +59,10 @@ h1, h3, h5, p, #selectPlace {
     text-align: center;
 }
 
-/*
+
 #contactForm {
     display: none;
 }
-*/
 
 
 #contactForm {
@@ -156,8 +155,12 @@ i {
 /*look at surface duo, look at about us page on ipad pro, look at having consistent footer, try sticky on home page as well, but then make space
 between button
 
+to fix;
+
 look at ipad footer and ipad pro space on about us page
 
 also look at footer icon spaces on all pages + galaxy fold selection form, and textarea in about us page maybe margin?, dont
 forget to update text to match the changes uve done, like search and hotels etc..
+
+also maybe add email alongside textarea so indicate who the inquiry is coming from, will require new emailjs template
 */

@@ -17,6 +17,15 @@ function sendEmail(contact) {
     return false //this prevents the page from refreshing when u press submit
 }
 
+$(document).ready(function() {
+    $("#contactForm").submit(function(e) {
+        $("#contactForm").hide(1500);
+    });
+    $("#show").click(function(){
+        $("#contactForm").show();
+  });
+});
+
 //code snippet taken from google places api 
 let map;
 let places;

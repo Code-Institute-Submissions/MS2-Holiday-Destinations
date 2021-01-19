@@ -27,33 +27,25 @@ https://github.com/Windmost8/MS2-Holiday-Destinations/blob/05945a29021a7b2c81907
 
 ## Features
 ---
-* Feature 1 - **Interactive Map:** A map of relevant locations is fully interactlble and explorable. Able to zoom in and out and discover surroundings.
-
-* Feature 2 - **Searchablilty:** Indexing relevant queries in order to provide desired outcome. This includes, among other things; Resturants, Hotels, Prices, Countries, and Cities
-
-* Feature 3 - **Contact Form:** If wished, users may submit a contanct form with their inquires to the site owners, or be directed to relevant destination links.
-
-* Feature 3 - **Socials:** Should users find themselve wanting to know more about holiday destinations, they may do so through the social media links as well.
-
-* Feature 4 - **Header Bar**
-
 * **Feature 1** - The header menus will show you "Home" and "Booking". For the home page you are introduced to the idea of exploring a dream destination form the get go, explained in a small paragraph, proceeded by two dropdown menus specifiying country/city.
 * **Feature 2** - After selecting country/city, you my press a button situated beneath them to show you your selected choices on an interactive map below the button. Alternatively you may explore the map first. 
 This map will show the location and relevant markers, allowing you to further select a desired destination.
 * **Feature 3** - After clickin on a marker, you should be directed to the "Booking" page where you are introduced to a form that should be explained by a paragraph situated above it. Filling this form and submitting it would send a confirmation mail to the user.
 * **Feature 4** - The footer section of both pages showcase relevant socials and addtional contact information, also interactable.
 ---
-# Technologies Used
+# Technologies/Programs Used
 * HTML
 * CSS 
 * Bootstrap 4 (Library)
 * JavaScript
 * Jquery
-* Google Api
+* Google Maps Javascript API/Places API
 * Chrome Dev Tools
 * Lighthouse Audits
 * Github
 * Gitpod
+* Google Cloud Platform
+* EmailJs
 ---
 
 ## Testing
@@ -70,7 +62,8 @@ ctrl-click the refresh button for a forced refresh.
     and also show a popup message on the map itself mentioning that the map did not load correctly. The map works regardless
     of this however, so we just click ok and continue like normal. Also, at times, when refreshing the page, the map may not display
     itself at all, and be completey greyed out, mentioning that something went wrong. Continuing to refresh
-    solves this. 
+    solves this, or going to the About Us page first then returning.
+    * Emailjs has a limited number of emaisl able to be sent.
 
 ---
 
@@ -85,7 +78,6 @@ so saving after each change is optimal, as well as commiting to github. The temp
 * **Github** - Deployment was done through github pages. The documentation of which can be found here: https://pages.github.com/ 
 Through the settings of the repository, in the options menu, scrolling down to GitHub pages and saving and publishing through there. 
 It took some time to deploy, but eventually after some minutes the site was up.
-
 The deployed site is functional and succesfull. The link is here; https://windmost8.github.io/MS2-Holiday-Destinations/index.html
 
 * Local Machine

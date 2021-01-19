@@ -13,6 +13,18 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"/>
     
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+    </script>
+
+    <!--emailjs-->
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("user_cys5zA05HkpltIxfZe0Sk");
+        })();
+    </script>
 </head>
 <body>
     <!--bootstrap, altering margins with added classes-->
@@ -60,19 +72,28 @@
                 <label for="country">Choose a Country:</label>
                 <select id="inputCountry" class="form-control">
                     <option selected disabled>Select a Country</option>
-                    <option>...</option>
+                    <option value="all">All</option>
+                    <option value="au">Australia</option>
+                    <option value="br">Brazil</option>
+                    <option value="ca">Canada</option>
+                    <option value="fr">France</option>
+                    <option value="de">Germany</option>
+                    <option value="mx">Mexico</option>
+                    <option value="nz">New Zealand</option>
+                    <option value="it">Italy</option>
+                    <option value="za">South Africa</option>
+                    <option value="es">Spain</option>
+                    <option value="pt">Portugal</option>
+                    <option value="us" selected>U.S.A.</option>
+                    <option value="uk">United Kingdom</option>
                 </select>
             </div>
             <div class="form-group col-md-4">
                 <label for="city">Choose a City:</label>
-                <select id="inputCity" class="form-control">
-                    <option selected disabled>Select a City</option>
-                    <option>...</option>
-                </select>
+                <input id="autocomplete" class="form-control mr-sm-2" type="text">
             </div>
         </div>
         <br>
-    <button type="submit" class="btn btn-dark">Let's find your dream destination!</button>
     </form>
 
     <br>
@@ -83,11 +104,11 @@
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="https://media-cdn.tripadvisor.com/media/photo-s/11/81/71/98/holiday-island-resort.jpg" alt="image of selected place">
             <div class="card-body">
-                <h5 class="card-title">Information:</h5><br>
-                <h6 class="card-title">Location:</h6><br>
-                <h6 class="card-title">Price Range:</h6><br>
-                <h6 class="card-title">Activities:</h6><br>
-                <h6 class="card-title">Reviews:</h6><br>
+                <h5 class="card-title">Information</h5><br>
+                <h6 class="card-title" id="location">Location:</h6><br>
+                <h6 class="card-title" id="price">Price Range:</h6><br>
+                <h6 class="card-title" id="activites">Activities:</h6><br>
+                <h6 class="card-title" id="reviews">Reviews:</h6><br>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <a href="#contactForm" class="btn btn-dark centerBtn">Reserve</a>
             </div>
@@ -102,38 +123,43 @@
     <form id="contactForm" onsubmit="return sendEmail(this)">
         <div class="form-row centerLastForm">
             <div class="col-md-3 mb-3 bookingInputContainer">
-            <input type="text" class="form-control" id="validationDefault01" placeholder="First name" required>
+            <input type="text" class="form-control" id="validationDefault01" placeholder="First name" name="fname" required>
             </div>
         </div>
         <div class="form-row centerLastForm">
             <div class="col-md-3 mb-3 bookingInputContainer">
-            <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" required>
+            <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" name="lname" required>
             </div>
         </div>
         <div class="form-row centerLastForm">
             <div class="col-md-3 mb-3 bookingInputContainer">
-            <input type="email" class="form-control" id="validationDefault03" placeholder="Email Address" required>
+            <input type="emailadress" class="form-control" id="validationDefault03" placeholder="Email Address" name="email" required>
             </div>
         </div>
         <div class="form-row centerLastForm"> 
             <div class="col-md-3 mb-3 bookingInputContainer">
-                <input type="number" class="form-control" id="validationDefaultUsername" placeholder="Number of People" min="1" max="5" required>
+                <input type="number" class="form-control" id="validationDefaultUsername" placeholder="Number of People" min="1" max="5" name="npeople" required>
             </div>
-        </div> 
+        </div>
+        <div class="form-row centerLastForm"> 
+            <div class="col-md-3 mb-3 bookingInputContainer">
+                <input type="text" class="form-control" id="validationDefaultDestination" placeholder="Destination" name="destination" required>
+            </div>
+        </div>  
         <div class="form-row centerLastForm">
             <div class="col-md-3 mb-3 bookingInputContainer">
                 <label for="validationDefault04"><b>From: (Date)</b></label>
-                <input type="date" class="form-control" id="validationDefault04" required>
+                <input type="date" class="form-control" id="validationDefault04" name="fromDate" required>
             </div>
         </div>
         <div class="form-row centerLastForm">
             <div class="col-md-3 mb-3 bookingInputContainer">
                 <label for="validationDefault05"><b>To: (Date)</b></label>
-                <input type="date" class="form-control" id="validationDefault05" required>
+                <input type="date" class="form-control" id="validationDefault05" name="toDate" required>
             </div>
         </div>
         <div class="form-row centerLastForm">
-            <button class="btn btn-dark" type="submit">Book</button>
+            <button type="submit" class="btn btn-dark">Book</button>
         </div>
     </form>
 
@@ -152,7 +178,7 @@
     <script src="myscripts.js"></script>
     <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy_QUVgORj9YfaMduVcsLT9IgOkkiBVpw&callback=initMap&libraries=&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy_QUVgORj9YfaMduVcsLT9IgOkkiBVpw&callback=initMap&libraries=places&v=weekly"
       defer
     ></script>
 </body>

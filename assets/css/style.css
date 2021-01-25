@@ -9,15 +9,10 @@ div#map {
     justify-content: center;
 }
 
-/* temp fix */
-#aboutBody {
-    height:95vh;
-}
-
-
 html, body {
   overflow-x: hidden;
 }
+
 body {
   position: relative
 }
@@ -31,7 +26,7 @@ body {
 #flex {
     display:flex;
     flex-direction: row;
-    justify-content: center;;
+    justify-content: center;
 }
 
 html {
@@ -45,33 +40,23 @@ html {
     font-size:160%;
 }
 
-
-.dreamDestination {
-    color: inherit;
-}
-
-img {
-    width: 300px;
-    height: 200px;
+.inqCard {
+    position: fixed;
+    z-index: 1000;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    top: 25%;
+    right: 0;
 }
 
 h1, h3, h5, p, #selectPlace {
     text-align: center;
 }
 
-
 #contactForm {
     display: none;
-}
-
-
-#contactForm {
     margin: 4%;
-}
-
-
-#textareaSize {
-    width:800px;
 }
 
 .centerLastForm {
@@ -88,8 +73,8 @@ h1 {
 }
 
 .social-networks li {
-  display: inline;
-  margin-right:50px;
+    display: inline;
+    margin-right:50px;
 }
 
 .social-networks {
@@ -151,16 +136,3 @@ i {
     height:95vh;
     }
 }
-
-/*look at surface duo, look at about us page on ipad pro, look at having consistent footer, try sticky on home page as well, but then make space
-between button
-
-to fix;
-
-look at ipad footer and ipad pro space on about us page
-
-also look at footer icon spaces on all pages + galaxy fold selection form, and textarea in about us page maybe margin?, dont
-forget to update text to match the changes uve done, like search and hotels etc..
-
-also maybe add email alongside textarea so indicate who the inquiry is coming from, will require new emailjs template
-*/

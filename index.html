@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Dream Destination!</title>
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
     <!--bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     
     <!--fontawesome-->
@@ -14,65 +16,105 @@
     
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
-    </script>
+    <!--from google places api-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
     <!--emailjs-->
-    <script type="text/javascript">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+    </script>
+    <script>
         (function(){
             emailjs.init("user_cys5zA05HkpltIxfZe0Sk");
         })();
     </script>
+
+    <!--removes favicon 404 error. there is no mention of favicon in this project but the error persisted-->
+    <link rel="shortcut icon" href="#">
 </head>
 <body>
-    <!--bootstrap, altering margins with added classes-->
+    <!--inquiry button-->
+    <div class="inqCard">
+        <button type="submit" class="btn btn-dark" data-toggle="modal" title="Inquiry" data-target="#inqModal"><i class="fas fa-question"></i></button>
+    </div>
+   
+    <!--bootstrap nav, modifed-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.html">Dream Destination</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
-                    </li>
-                </ul>
-            </form>
         </div>
     </nav>
 
     <br>
 
+    <!--inqury modal when clicking "?" button on page-->
+    <div class="modal fade" id="inqModal" tabindex="-1" role="dialog" aria-labelledby="inqModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="inqModalLabel">Inquiry</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="inqForm" name="inqForm" onsubmit="return sendInquiry(this)">
+                        <p>If you have any inquires, then speak your mind!</p>
+                        <div class="form-row centerLastForm">
+                            <div class="col-md-4 mb-3">
+                                <input type="text" class="form-control" id="inqFnameId" placeholder="First name" name="inqFname" required>
+                            </div>
+                        </div>
+                        <div class="form-row centerLastForm">
+                            <div class="col-md-4 mb-3">
+                                <input type="text" class="form-control" id="inqLnameId" placeholder="Last name" name="inqLname" required>
+                            </div>
+                        </div>
+                        <div class="form-row centerLastForm">
+                            <div class="col-md-4 mb-3">
+                                <input type="email" class="form-control" id="inqEmailId" placeholder="Email Address" name="inqEmail" required>
+                                <small id="emailHelp2" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                        </div>
+                        <div class="form-group centerLastForm">
+                            <div class="col-md-8 mb-8">
+                                <textarea class="form-control" id="inqProjectRequestId" rows="3" placeholder="Your Inquiry" name="inqProjectRequest" required></textarea>
+                            </div> 
+                        </div>
+                        <div class="modal-footer form-row centerLastForm">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button id="inqSendBtn" type="submit" class="btn btn-dark" data-toggle="modal" data-target="#emailModal">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <h1>Help us find your dream!</h1>
 
     <br>
 
-    <p>Welcome to <b><a href="about.html" class="dreamDestination"><u>Dream Destination</u></a></b>, we want <b>you</b>, to help <b>us</b>, help you
+    <p>Welcome to <b>Dream Destination</b>, we want <b>you</b>, to help <b>us</b>, help you
         discover and declare your dream destination!<br>Displayed below is an interactive map that you may explore to your hearts desire. Or you may
-        instead use the select options to find places easier.
+        instead use the select and search options to find places easier.<br><br>
+        We pride ourselves in simply providing you with an easier way of coming closer to achieving your 
+        best holiday. Whether this includes a specific <b>location</b>, <b>hotel</b> or <b>rating</b>, we've got you covered! 
+        <br> 
     </p>
 
-    <h3>Go ahead and start!</h3>
+    <h3>Go ahead and start! <br> Our goal is your goal.</h3>
 
     <br>
 
     <!--bootstrap form, modified-->
-    <form id="selectPlace" action="/action_page.php">
+    <form id="selectPlace">
         <div id="centerForm">
-            <div class="form-group col-md-4">
-                <label for="country">Choose a Country:</label>
-                <select id="inputCountry" class="form-control">
-                    <option selected disabled>Select a Country</option>
-                    <option value="all">All</option>
+            <div id="controls" class="form-group col-md-4">
+                <label for="country">Country:</label>
+                <select id="country" class="form-control">
+                    <option value="all" selected>All</option>
                     <option value="au">Australia</option>
                     <option value="br">Brazil</option>
                     <option value="ca">Canada</option>
@@ -84,85 +126,135 @@
                     <option value="za">South Africa</option>
                     <option value="es">Spain</option>
                     <option value="pt">Portugal</option>
-                    <option value="us" selected>U.S.A.</option>
+                    <option value="us">USA</option>
                     <option value="uk">United Kingdom</option>
                 </select>
             </div>
-            <div class="form-group col-md-4">
-                <label for="city">Choose a City:</label>
-                <input id="autocomplete" class="form-control mr-sm-2" type="text">
+            <div id="citySelect" class="form-group col-md-4">
+                <label for="autocomplete">City:</label>
+                <input id="autocomplete" class="form-control mr-sm-2" type="text" placeholder="Location">
             </div>
         </div>
-        <br>
+        <p>(<b>Note:</b> Hotel markers are shown in green and contain letters from A-Z).</p>
     </form>
-
-    <br>
 
     <div id="flex">
         <div id="map"></div>
         <!--bootstrap card-->
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://media-cdn.tripadvisor.com/media/photo-s/11/81/71/98/holiday-island-resort.jpg" alt="image of selected place">
+            <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/1200px-The_Earth_seen_from_Apollo_17.jpg" alt="selected_country_flag">
+            <br><br>
             <div class="card-body">
                 <h5 class="card-title">Information</h5><br>
-                <h6 class="card-title" id="location">Location:</h6><br>
-                <h6 class="card-title" id="price">Price Range:</h6><br>
-                <h6 class="card-title" id="activites">Activities:</h6><br>
-                <h6 class="card-title" id="reviews">Reviews:</h6><br>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#contactForm" class="btn btn-dark centerBtn" id="show">Reserve</a>
+                <h6 class="card-title">Address:</h6>
+                <p class="card-title" id="iw-address"></p><br>
+                <h6 class="card-title">Name:</h6>
+                <p class="card-title" id="iw-url"></p><br>
+                <h6 class="card-title">Reviews:</h6>
+                <p class="card-title" id="iw-rating"></p><br>
+                <h6 class="card-title">Telephone:</h6>
+                <p class="card-title" id="iw-phone"></p><br><br><br><br><br>
+                <a href="#contactForm" class="btn btn-dark centerBtn" id="show">Continue</a>
+            </div>
+        </div>
+    </div>
+
+    <!--bootstrap form, modified-->
+    <form id="contactForm" name="contactForm" onsubmit="return sendEmail(this)">
+        <p>Fill in this form to proceed.</p>
+        <div class="form-row centerLastForm">
+            <div class="col-md-3 mb-3">
+                <input type="text" class="form-control" id="fnameId" placeholder="First name" name="fname" required>
+            </div>
+        </div>
+        <div class="form-row centerLastForm">
+            <div class="col-md-3 mb-3">
+                <input type="text" class="form-control" id="lnameId" placeholder="Last name" name="lname" required>
+            </div>
+        </div>
+        <div class="form-row centerLastForm">
+            <div class="col-md-3 mb-3">
+                <input type="email" class="form-control" id="emailId" placeholder="Email Address" name="email" required>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+        </div>
+        <div class="form-row centerLastForm"> 
+            <div class="col-md-3 mb-3">
+                <input type="number" class="form-control" id="npeopleId" placeholder="Number of People" min="1" max="5" name="npeople" required>
+            </div>
+        </div>
+        <div class="form-row centerLastForm"> 
+            <div class="col-md-3 mb-3">
+                <input type="text" class="form-control" id="destinationId" placeholder="Destination" name="destination" required>
+            </div>
+        </div> 
+        <div class="form-row centerLastForm">
+            <div class="col-md-3 mb-3">
+                <label for="fromDateId"><b>From: (Date)</b></label>
+                <input type="date" class="form-control" id="fromDateId" name="fromDate" required>
+            </div>
+        </div>
+        <div class="form-row centerLastForm">
+            <div class="col-md-3 mb-3">
+                <label for="toDateId"><b>To: (Date)</b></label>
+                <input type="date" class="form-control" id="toDateId" name="toDate" required>
+            </div>
+        </div>
+        <p>Should you have any questions or comments please let us know here.</p>
+        <div class="form-group centerLastForm">
+            <div class="col-md-4 mb-4">
+                <textarea class="form-control" id="inquiryId" rows="3" placeholder="Your Message" name="projectRequest"></textarea>
+            </div> 
+        </div>
+        <div class="form-row centerLastForm">
+            <button type="submit" class="btn btn-dark" data-toggle="modal" data-target="#emailModal">Reserve</button>
+        </div>
+    </form>
+
+    <!--bootstrap modal popup-->
+    <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="emailModalLabel">Thank You!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Your form has been sent.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="reloadPg()">Ok</button>
+                </div>
             </div>
         </div>
     </div>
 
     <br>
 
-    <!--bootstrap form, modified-->
-    <form id="contactForm" onsubmit="return sendEmail(this)">
-        <p>Fill in this form to proceed.</p>
-        <div class="form-row centerLastForm">
-            <div class="col-md-3 mb-3 bookingInputContainer">
-            <input type="text" class="form-control" id="validationDefault01" placeholder="First name" name="fname" required>
-            </div>
-        </div>
-        <div class="form-row centerLastForm">
-            <div class="col-md-3 mb-3 bookingInputContainer">
-            <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" name="lname" required>
-            </div>
-        </div>
-        <div class="form-row centerLastForm">
-            <div class="col-md-3 mb-3 bookingInputContainer">
-            <input type="emailadress" class="form-control" id="validationDefault03" placeholder="Email Address" name="email" required>
-            </div>
-        </div>
-        <div class="form-row centerLastForm"> 
-            <div class="col-md-3 mb-3 bookingInputContainer">
-                <input type="number" class="form-control" id="validationDefaultUsername" placeholder="Number of People" min="1" max="5" name="npeople" required>
-            </div>
-        </div>
-        <div class="form-row centerLastForm"> 
-            <div class="col-md-3 mb-3 bookingInputContainer">
-                <input type="text" class="form-control" id="validationDefaultDestination" placeholder="Destination" name="destination" required>
-            </div>
-        </div>  
-        <div class="form-row centerLastForm">
-            <div class="col-md-3 mb-3 bookingInputContainer">
-                <label for="validationDefault04"><b>From: (Date)</b></label>
-                <input type="date" class="form-control" id="validationDefault04" name="fromDate" required>
-            </div>
-        </div>
-        <div class="form-row centerLastForm">
-            <div class="col-md-3 mb-3 bookingInputContainer">
-                <label for="validationDefault05"><b>To: (Date)</b></label>
-                <input type="date" class="form-control" id="validationDefault05" name="toDate" required>
-            </div>
-        </div>
-        <div class="form-row centerLastForm">
-            <button type="submit" class="btn btn-dark">Book</button>
-        </div>
-    </form>
-
-    <br>
+    <div style="display: none">
+      <div id="info-content">
+        <table>
+          <tr id="iw-url-row" class="iw_table_row">
+            <td id="iw-icon" class="iw_table_icon"></td>
+            <td id="iw-url1"></td>
+          </tr>
+          <tr id="iw-address-row" class="iw_table_row">
+            <td class="iw_attribute_name">Address:</td>
+            <td id="iw-address1"></td>
+          </tr>
+          <tr id="iw-phone-row" class="iw_table_row">
+            <td class="iw_attribute_name">Telephone:</td>
+            <td id="iw-phone1"></td>
+          </tr>
+          <tr id="iw-rating-row" class="iw_table_row">
+            <td class="iw_attribute_name">Rating:</td>
+            <td id="iw-rating1"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
 
     <footer>  
         <ul class="social-networks">
@@ -174,8 +266,10 @@
         </ul>
     </footer>
 
-    <script src="myscripts.js"></script>
+    <script src="email.js"></script>
+    <script src="map.js"></script>
     <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
+    <!--api key alongside places api script-->
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy_QUVgORj9YfaMduVcsLT9IgOkkiBVpw&callback=initMap&libraries=places&v=weekly"
       defer

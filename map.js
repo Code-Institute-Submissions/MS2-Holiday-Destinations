@@ -184,7 +184,7 @@ function setAutocompleteCountry() {
 }
 
 /* 
-The dropMarker function
+The dropMarker function drops the marker on the map.
 */
 function dropMarker(i) {
     return function () {
@@ -216,6 +216,8 @@ function showInfoWindow() {
 The details used by the infowindow are loaded into html elements in this buildIwContent function.
 The star symbol uses the &#11088 unciode decimal code for given stas, and &#10025 for the unachieved stars rating.
 Additionally, the regexp will display the url in the info window.
+The are two versios of the same id, only distinguished by the number "1", as they show they same thing but in two different places. One
+in the card, and on as a label when clicking on a marker.
 */
 function buildIWContent(place) {
     document.getElementById("iw-url").innerHTML = '<b><a href="' + place.url + '" target="_blank">' + place.name + "</a></b>";

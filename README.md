@@ -138,6 +138,8 @@ ctrl-click the refresh button for a forced refresh.
 
     * Emailjs has a limited number of emails able to be sent.
 
+    * At time of submission, there are 83 email quotas remaining on my EmailJs and 73 days remaining in my Googee Cloud Platform account.
+
 ---
 
 ## Deployment

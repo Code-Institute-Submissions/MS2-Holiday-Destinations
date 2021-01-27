@@ -32,17 +32,16 @@
     <link rel="shortcut icon" href="#">
 </head>
 <body>
-    <!--inquiry button-->
-    <div class="inqCard">
-        <button type="submit" class="btn btn-dark" data-toggle="modal" title="Inquiry" data-target="#inqModal"><i class="fas fa-question"></i></button>
-    </div>
-   
     <!--bootstrap nav, modifed-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.html">Dream Destination</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
             </ul>
+            <a class="form-inline my-2 my-lg-0 btn btn-dark" data-toggle="modal" title="Inquiry" data-target="#inqModal">Inquire</a>
         </div>
     </nav>
 
@@ -62,23 +61,23 @@
                     <form id="inqForm" name="inqForm" onsubmit="return sendInquiry(this)">
                         <p>If you have any inquires, then speak your mind!</p>
                         <div class="form-row centerLastForm">
-                            <div class="col-md-4 mb-3">
+                            <div class="col-md-5 mb-3">
                                 <input type="text" class="form-control" id="inqFnameId" placeholder="First name" name="inqFname" required>
                             </div>
                         </div>
                         <div class="form-row centerLastForm">
-                            <div class="col-md-4 mb-3">
+                            <div class="col-md-5 mb-3">
                                 <input type="text" class="form-control" id="inqLnameId" placeholder="Last name" name="inqLname" required>
                             </div>
                         </div>
                         <div class="form-row centerLastForm">
-                            <div class="col-md-4 mb-3">
+                            <div class="col-md-5 mb-3">
                                 <input type="email" class="form-control" id="inqEmailId" placeholder="Email Address" name="inqEmail" required>
                                 <small id="emailHelp2" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                         </div>
                         <div class="form-group centerLastForm">
-                            <div class="col-md-8 mb-8">
+                            <div class="col-md-7 mb-8">
                                 <textarea class="form-control" id="inqProjectRequestId" rows="3" placeholder="Your Inquiry" name="inqProjectRequest" required></textarea>
                             </div> 
                         </div>
@@ -191,13 +190,19 @@
         <div class="form-row centerLastForm">
             <div class="col-md-3 mb-3">
                 <label for="fromDateId"><b>From: (Date)</b></label>
-                <input type="date" class="form-control" id="fromDateId" name="fromDate" required>
+                <input type="date" class="form-control" id="fromDateId" name="fromDate" onkeydown="return false" required>
             </div>
         </div>
         <div class="form-row centerLastForm">
             <div class="col-md-3 mb-3">
-                <label for="toDateId"><b>To: (Date)</b></label>
-                <input type="date" class="form-control" id="toDateId" name="toDate" required>
+                <select class="form-control" id="toDateId" name="toDate" required>
+                    <option value="" selected disabled>Time Proposed:</option>
+                    <option value="1 Week">1 Week</option>
+                    <option value="2 Weeks">2 Weeks</option>
+                    <option value="3 Weeks">3 Weeks</option>
+                    <option value="1 Month">1 Month</option>
+                    <option value="Specified">Other (Specifiy below in 'Your Message')</option>
+                </select>
             </div>
         </div>
         <p>Should you have any questions or comments please let us know here.</p>
@@ -236,13 +241,13 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="failedModalLabel">Error</h5>
+                    <h5 class="modal-title" id="failedModalLabel">Error!</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    Please try again.
+                    We are unable to receive your form at the moment. Please try again or come back at a later time.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="reloadPg()">Ok</button>
@@ -276,6 +281,7 @@
       </div>
     </div>
 
+    <!--fontawesome icons utilized here in the <i> tags-->
     <footer>  
         <ul class="social-networks">
             <li>Want to Socialize?</li>

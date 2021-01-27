@@ -23,6 +23,9 @@ body {
     justify-content: center;
 }
 
+/*
+This is in order to make the scrolling behave smoothly when clicking on the continue button, scrolling you down to the booking form.
+*/
 html {
     scroll-behavior: smooth;
 }
@@ -34,16 +37,6 @@ html {
     font-size:160%;
     text-align: center;
     border-top:1px solid black;
-}
-
-.inqCard {
-    position: fixed;
-    z-index: 1000;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border-radius: 5px;
-    top: 25%;
-    right: 0;
 }
 
 h1, h3, h5, p, #selectPlace {
@@ -67,6 +60,19 @@ p {
 h1 {
     margin:10px;
 }
+
+/*
+This CSS prevents the nav bar from sliding to the right when clicking on Inquire. Seems to be an issue with have a modal open up in the navigation.
+Code solution was taken from https://stackoverflow.com/questions/26819725/bootstrap-header-moves-when-modal-opens/26833908 
+Credit to user murli2308
+*/
+.modal-open {
+  position: fixed;
+  overflow: scroll;
+  width: 100%;
+  padding-right: 0!important;
+}
+/**/
 
 .social-networks li {
     display: inline;

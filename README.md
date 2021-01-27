@@ -75,6 +75,10 @@ No functionaliy was removed, only reformed.
 * Google Cloud Platform
 * EmailJs *(for their ease of email sending forms)*
 
+---
+
+# Typography/Color Sceheme
+
 Typography includes bootstrap classes. No specific typography was chosen for this project. Certain sizes 
 for the text were delivered depending on function, such as bold letters/words for emphasis, and smaller letter sizing for
 important distinctions. 
@@ -100,7 +104,18 @@ Color scheme included black for buttons/interactions alongside the header and th
     Attempting to send however, without the fields filled should showcase error tooltips. After succesfully submitting through the send button, another modal should pop up alongside it's "Ok" button, which then refreshes the page.
     * ***Links*** - All links, whether in the footer, or in the map/card should open up the correct path and a new tab.
 
-* Screenshots
+### Screenshots -
+All screenshots can be found in the screenshots folder inside the assets folder in the directory,
+or viewed from this link; https://github.com/Windmost8/MS2-Holiday-Destinations/blob/b875cc759f3efd9a6def9e78a5bfa0926cc50c8c/screenshots
+
+The screenshots include both desktop and mobile pictures, indicating the intended output.
+Such as;
+1. When the page loads
+2. When you select country and city and hotel
+3. When clicking the continue button
+4. When clicking on the reserve button
+5. When clicking on the Inquire menu navigation
+6. Modal Pop ups.
 
 HTML code was validated through https://validator.w3.org/
 
@@ -127,16 +142,30 @@ ctrl-click the refresh button for a forced refresh.
 
 ## Deployment
 ---
-* **Gitpod** - Previewing the site in gitpod is done through the command "python3 -m http.server" (without quotes). Once the command is used, 
-a popup with port 8000 will ask you to either "Make Public" or "Open Browser". You can click on "Make Public" first and if another popup arrives you 
-click on "Open Browser" in order to see the site. Alternatively, you can ctrl-click on the port 8000 link that will be shown in the terminal. There is no autosave 
-so saving after each change is optimal, as well as commiting to github. The template used here was the full template issued by Code Insitutite.
+* **Gitpod** 
+    * To preview site through gitpod, run the command "python3 -m http.server" in the terminal (without the quotes). 
+    * Executing this should prompt a pop up for port 8000
+    alongside the options to "Make Public" or "Open Browser". If it is the first time after opening gitpod, then click on "Make Public", and then "Open Browser" if the pop up
+    comes up again. If the pop up does not come, you may alternatively ctrl-click on the link that will be shown in the terminal for port 8000.
+    * Gitpod has no automatic saving, so saving after each change is optimal.
 
 
 * **Github** - Deployment was done through github pages. The documentation of which can be found here: https://pages.github.com/ 
 Through the settings of the repository, in the options menu, scrolling down to GitHub pages and saving and publishing through there. 
 It took some time to deploy, but eventually after some minutes the site was up.
 The deployed site is functional and succesfull. The link is here; https://windmost8.github.io/MS2-Holiday-Destinations/index.html
+    * In order to deploy the site, you must do so through the settings option in the repository that the project is contained in. In the settings, scrolling down
+    the page untill GitHub Pages.
+    * Once there, you may save by clicking the button "Save" and await its deployment. It may take some minutes untill is is deployed, and the site URL will also be highlighted
+    in green once it has succesfully deployed.
+    * Documentation of Github pages can be found here https://pages.github.com/
+    and the fully deployed site is here: https://windmost8.github.io/MS2-Holiday-Destinations/
+    * In order to commit, whilst still in gitpod, running the command git add . (or a specific file/folder instead of "." (without the quotes)),
+    will add all the changes you have done to be prepared for a commit. 
+    * After this step, you may run the command git commit -m "your comment" (your comment being whatever message you want to convey alongside the commit). Running this will 
+    show how much changes were done, through the terminal.
+    * Finally, running the command git push should put your changes and project into your repository.
+
 
 ---
 

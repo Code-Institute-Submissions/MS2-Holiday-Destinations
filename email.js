@@ -1,4 +1,4 @@
-//for booking emailjs
+//For booking emailjs
 function sendEmail(contact) {
     emailjs.send('gmail', 'ms2', {
         "fname": contact.fname.value, 
@@ -18,12 +18,21 @@ function sendEmail(contact) {
     return false;
 }
 
-//reloads page when clicking on ok in modal popup after reserve button in booking and send in inquiry
+//Reloads page when clicking on ok in modal popup after reserve button in booking and send in inquiry
 function reloadPg() {
     location.reload();
 }
 
-//for inquiry emailjs
+//reloads page when clicking outside modal as well. This solution is provided by bootstrap
+$('#sentModal').on('hidden.bs.modal', function () {
+ location.reload();
+})
+
+$('#failedModal').on('hidden.bs.modal', function () {
+ location.reload();
+})
+
+//For inquiry emailjs
 function sendInquiry(contact) {
     emailjs.send('gmail', 'feedbackMs2', {
         "inqFname": contact.inqFname.value, 
@@ -39,13 +48,13 @@ function sendInquiry(contact) {
     return false;
 }
 
-//hides inquiry form when submitting
+//Hides inquiry form when submitting
 $('#inqForm').submit(function(e) {
     e.preventDefault();
     $('#inqModal').modal('hide');
 });
 
-//hides and shows the contact form when clicking on continue and/or reserve buttons respectively
+//Hides and shows the contact form when clicking on continue and/or reserve buttons respectively
 $(document).ready(function() {
     $("#contactForm").submit(function() {
         $("#contactForm").hide(1500);
@@ -54,5 +63,10 @@ $(document).ready(function() {
         $("#contactForm").show();
   });
 });
+
+//Restricts the date input on today's date.
+var today = new Date()
+minDate = today.toISOString().substring(0,10);
+$('#fromDateId').prop('min', minDate);
 
 

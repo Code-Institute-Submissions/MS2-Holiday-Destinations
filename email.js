@@ -1,4 +1,4 @@
-//for emailjs
+//for booking emailjs
 function sendEmail(contact) {
     emailjs.send('gmail', 'ms2', {
         "fname": contact.fname.value, 
@@ -10,10 +10,15 @@ function sendEmail(contact) {
         "to_date": contact.toDate.value,
         "project_request": contact.projectRequest.value
     })
-    return false
+    .then(function(response) {$("#sentModal").modal()
+    console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {$("#failedModal").modal()
+    console.log('FAILED...', error);
+    });
+    return false;
 }
 
-//reloads page when clicking on ok in modal popup after reserve button
+//reloads page when clicking on ok in modal popup after reserve button in booking and send in inquiry
 function reloadPg() {
     location.reload();
 }
@@ -26,7 +31,12 @@ function sendInquiry(contact) {
         "to_email": contact.inqEmail.value,
         "inq_project_request": contact.inqProjectRequest.value
     })
-    return false
+    .then(function(response) {$("#sentModal").modal()
+    console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {$("#failedModal").modal()
+    console.log('FAILED...', error);
+    });
+    return false;
 }
 
 //hides inquiry form when submitting
@@ -44,4 +54,5 @@ $(document).ready(function() {
         $("#contactForm").show();
   });
 });
+
 

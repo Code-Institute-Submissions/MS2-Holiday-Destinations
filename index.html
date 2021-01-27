@@ -84,7 +84,7 @@
                         </div>
                         <div class="modal-footer form-row centerLastForm">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button id="inqSendBtn" type="submit" class="btn btn-dark" data-toggle="modal" data-target="#emailModal">Send</button>
+                            <button id="inqSendBtn" type="submit" class="btn btn-dark" data-toggle="modal">Send</button>
                         </div>
                     </form>
                 </div>
@@ -153,7 +153,7 @@
                 <h6 class="card-title">Reviews:</h6>
                 <p class="card-title" id="iw-rating"></p><br>
                 <h6 class="card-title">Telephone:</h6>
-                <p class="card-title" id="iw-phone"></p><br><br><br><br><br>
+                <p class="card-title" id="iw-phone"></p><br><br><br>
                 <a href="#contactForm" class="btn btn-dark centerBtn" id="show">Continue</a>
             </div>
         </div>
@@ -207,22 +207,42 @@
             </div> 
         </div>
         <div class="form-row centerLastForm">
-            <button type="submit" class="btn btn-dark" data-toggle="modal" data-target="#emailModal">Reserve</button>
+            <button type="submit" class="btn btn-dark" data-toggle="modal">Reserve</button>
         </div>
     </form>
 
-    <!--bootstrap modal popup-->
-    <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true">
+    <!--bootstrap modal popup, succesful sent-->
+    <div class="modal fade" id="sentModal" tabindex="-1" role="dialog" aria-labelledby="sentModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="emailModalLabel">Thank You!</h5>
+                    <h5 class="modal-title" id="sentModalLabel">Thank You!</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     Your form has been sent.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="reloadPg()">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--bootstrap modal popup, failed sent-->
+    <div class="modal fade" id="failedModal" tabindex="-1" role="dialog" aria-labelledby="failedModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="failedModalLabel">Error</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Please try again.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="reloadPg()">Ok</button>

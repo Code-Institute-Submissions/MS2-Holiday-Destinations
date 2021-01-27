@@ -106,7 +106,7 @@ Color scheme included black for buttons/interactions alongside the header and th
 
 ### Screenshots -
 All screenshots can be found in the screenshots folder inside the assets folder in the directory,
-or viewed from this link; https://github.com/Windmost8/MS2-Holiday-Destinations/blob/b875cc759f3efd9a6def9e78a5bfa0926cc50c8c/screenshots
+or viewed from this link; https://github.com/Windmost8/MS2-Holiday-Destinations/tree/96deb02b2363c0bf73e043e3c3b78dcea09b87a6/screenshots
 
 The screenshots include both desktop and mobile pictures, indicating the intended output.
 Such as;

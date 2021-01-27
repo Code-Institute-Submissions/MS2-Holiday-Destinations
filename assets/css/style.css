@@ -17,12 +17,6 @@ body {
   position: relative
 }
 
-/*
-body {
-    background-color: lightblue;
-}
-*/
-
 #flex {
     display:flex;
     flex-direction: row;

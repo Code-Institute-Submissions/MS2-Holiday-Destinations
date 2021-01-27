@@ -140,6 +140,7 @@ Clicking on a marker will then bring up details.
         };
         places.nearbySearch(SEARCH, (results, status, pagination) => {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
+                clearMarkers()
                 for (let i = 0; i < results.length; i++) {
                     const MARKER_LETTER = String.fromCharCode("A".charCodeAt(0) + (i % 26));
                     const MARKER_ICON = MARKER_PATH + MARKER_LETTER + ".png";
@@ -179,6 +180,7 @@ the setAutocompleteCountry function, which was allso called earlier will zoom an
             map.setZoom(COUNTRIES[COUNTRY].zoom);
         }
         $(".card-img-top").attr("src", COUNTRIES[COUNTRY].flagUrl);
+        clearMarkers()
     }
 
 /* 
@@ -259,10 +261,23 @@ Additionally, the regexp will display the url in the info window.
     }
 
 /*
+clears the selected marker from appearing to the map when changing country
+*/
+    function clearMarkers() {
+        for (let i = 0; i < markers.length; i++) {
+            if (markers[i]) {
+                markers[i].setMap(null);
+            }
+        }
+        markers = [];
+    }
+
+/*
 clears the city search when a different country is selected
 */
     document.getElementById('country').addEventListener("change", function() {
         document.getElementById('autocomplete').value = '';
+        document.getElementById("destinationId").value = '';
         clearCard();
     });
 
